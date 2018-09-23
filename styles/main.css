@@ -65,8 +65,15 @@ input{
   opacity: 1;
   transition: opacity 300ms;
 }
+.btn-submit:not([disabled]):hover{
+  background-color: rgba(16,120,255, 1);
+}
 
-.disabled{
+.btn-submit:click{
+  transform: scale(0.7);
+}
+
+.btn-submit:disabled{
   cursor: auto;
   opacity: 0.7;
 }

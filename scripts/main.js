@@ -2,8 +2,7 @@
 
 var app = {
 	forms 	: document.forms[0],
-	submit 	: document.querySelector('.btn-submit'), 
-	clsDisable : 'disabled',
+	submit 	: document.querySelector('.btn-submit'),
 	clsValid : 'valid',
 	clsError : 'error',
 
@@ -76,13 +75,11 @@ var app = {
 		else
 			app.changeClass(app.forms.phone, app.clsValid);
 
-		if( email && phone){
-			app.removeClass(app.submit, app.clsDisable);
-			app.submit.addEventListener( 'click', app.clean, false );
-		}else{
-			app.addClass(app.submit, app.clsDisable);
-			app.submit.removeEventListener( 'click', app.clean );
-		}
+		if( email && phone)
+			app.submit.removeAttribute('disabled');
+		else
+			app.submit.setAttribute('disabled', 'disabled');
+		
 
 
 		return false;
